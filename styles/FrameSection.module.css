@@ -1,0 +1,15 @@
+.frame {
+  border-color: #2d403e;
+  background: #2d403e;
+  box-shadow: -20px -20px 71px 2px rgba(153, 190, 190, 0.199),
+    20px 20px 60px rgba(45, 64, 62, 0.4);
+  border-radius: 48px 24px;
+  padding: 1em;
+}
+.frameInner {
+  padding: 3em;
+  border-radius: 30px;
+  box-shadow: inset -10px -10px 30px rgba(134, 172, 168, 0.12),
+    inset 10px 10px 30px rgba(0, 0, 0, 0.452);
+  border-radius: 38px 14px;
+}

@@ -17,11 +17,11 @@ body {
 @layer base {
   /* Write your own custom base styles here */
   h1 {
-    @apply font-primary text-3xl md:text-7xl text-primary;
+    @apply font-primary text-3xl md:text-6xl text-primary;
   }
 
   h2 {
-    @apply font-primary text-2xl  md:text-5xl text-primary;
+    @apply font-primary text-2xl  md:text-3xl text-primary;
   }
 
   h3 {
@@ -29,7 +29,7 @@ body {
   }
 
   h4 {
-    @apply font-primary text-lg  text-primary;
+    @apply font-primary text-lg text-primary;
   }
   p {
     @apply font-light text-primary;

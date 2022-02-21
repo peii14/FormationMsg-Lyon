@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Button from '../components/Button'
+import FrameSection from '../components/FrameSection'
 import blur from '../img/blur1.png'
 import ava from '../img/Home/ava1.png'
 const Home: NextPage = () => {
@@ -35,8 +36,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section>
-          
+        <section className='h-screen'>
+          <FrameSection>
+            
+          </FrameSection>
         </section>
       </main>
     </div>
