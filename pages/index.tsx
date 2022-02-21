@@ -36,9 +36,48 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className="">
-          <FrameSection title='Un Savoir Faire Reconnu' sub='Since 2005'>
-            <h1>DUARRR</h1>
+        <section className="mx-auto max-w-3xl">
+          <FrameSection title="Un Savoir Faire Reconnu" sub="Since 2005">
+            <ul className="list-outside list-decimal mt-16">
+              <li>
+                <p>Formations Massage professionnelles certifiantes</p>
+              </li>
+              <li>
+                <p>Cours de 1 à 6 personnes pour un Suivi Personnalisé</p>
+                <ul className="ml-5 list-disc">
+                  <li>
+                    <p>Des formations chaque semaine</p>
+                  </li>
+                  <li>
+                    <p>12 mois/ 12 en semaine et week end</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Des 100 aines de Masseurs formés chaque année</p>
+              </li>
+              <li>
+                <p>
+                  Vos Formateurs pratiquent sur vous Chaque geste ils vous
+                  conseillent étape aprés étape
+                </p>
+              </li>
+              <li>
+                <p>Un Accompagnement Professionnel</p>
+              </li>
+              <li>
+                <p>Vous pratiquez sur votre Formatrice(eur)</p>
+              </li>
+              <li>
+                <p>Organisme de Formation Professionnel</p>
+              </li>
+              <li>
+                <p>Prise en charge possible du coût de vos formations</p>
+              </li>
+              <li>
+                <p>Membre de la Fédération WMF</p>
+              </li>
+            </ul>
           </FrameSection>
         </section>
       </main>

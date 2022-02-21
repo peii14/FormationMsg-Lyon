@@ -9,9 +9,10 @@ const FrameSection = (props: any) => {
               <h2 className="text-secondary">{props.title}</h2>
             </div>
             <div className={style.frameSubtitle}>
-                <h4>{props.sub}</h4>
+              <h4>{props.sub}</h4>
             </div>
           </div>
+          {props.children}
         </div>
       </div>
     </>
