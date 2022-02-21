@@ -423,6 +423,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+headless@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/headless/-/headless-1.2.0.tgz#440ba3a26cd959692844cae42416ab395a552151"
+  integrity sha1-RAujomzZWWkoRMrkJBarOVpVIVE=
+
 import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
