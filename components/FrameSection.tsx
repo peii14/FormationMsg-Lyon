@@ -3,9 +3,16 @@ const FrameSection = (props: any) => {
   return (
     <>
       <div className={style.frame}>
-          <div className={style.frameInner}>
-          <h1>DUARRR</h1>
+        <div className={style.frameInner}>
+          <div className={style.title}>
+            <div className={style.frameTitle}>
+              <h2 className="text-secondary">{props.title}</h2>
+            </div>
+            <div className={style.frameSubtitle}>
+                <h4>{props.sub}</h4>
+            </div>
           </div>
+        </div>
       </div>
     </>
   )

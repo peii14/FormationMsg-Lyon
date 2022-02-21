@@ -13,9 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className='h-screen flex flex-col justify-center gap-20'>
-          <div className="grid grid-cols-2 items-center h-max  ">
-            <div className=" max-w-md flex flex-col gap-3">
+        <section className="flex h-screen flex-col justify-center gap-20">
+          <div className="grid h-max grid-cols-2 items-center  ">
+            <div className=" flex max-w-md flex-col gap-3">
               <h1>Formation Massage</h1>
               <h3>En école, à domicile, à distance</h3>
               <h4>
@@ -36,9 +36,9 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className='h-screen'>
-          <FrameSection>
-            
+        <section className="">
+          <FrameSection title='Un Savoir Faire Reconnu' sub='Since 2005'>
+            <h1>DUARRR</h1>
           </FrameSection>
         </section>
       </main>
