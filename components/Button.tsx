@@ -2,9 +2,13 @@ const Button = (props: any) => {
   return (
     <div className="cursor-pointer">
       {props.type ? (
-        <div className="text-secondary bg-secondary rounded-3xl py-2 px-3">{props.content}</div>
+        <div className="rounded-3xl bg-secondary py-4 px-5 text-secondary">
+          {props.content}
+        </div>
       ) : (
-        <div className="text-primary border-secondary rounded-3xl border-2 py-2 px-3">{props.content}</div>
+        <div className="rounded-3xl border-2 border-secondary py-4 px-5 text-primary">
+          {props.content}
+        </div>
       )}
     </div>
   )

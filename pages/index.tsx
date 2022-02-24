@@ -7,6 +7,7 @@ import blur from '../img/blur1.png'
 import ava from '../img/Home/ava1.png'
 const Home: NextPage = () => {
   return (
+    
     <div className="layout">
       <Head>
         <title>Lyon Formation Massage</title>
