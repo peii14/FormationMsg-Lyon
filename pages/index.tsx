@@ -7,6 +7,7 @@ import blur from '../img/blur1.png'
 import ava from '../img/Home/ava1.png'
 import Neuromorphism from '../components/Neuromorphism'
 import Formation from '../components/Formation'
+import FormationDropdown from '../components/FormationDropdown'
 const Home: NextPage = () => {
   return (
     <div className="layout">
@@ -104,7 +105,7 @@ const Home: NextPage = () => {
                 sub=""
                 hidden={true}
               >
-                <ul className="mt-20 list-decimal p-5">
+                <ul className="mt-12 list-decimal p-5">
                   <li>
                     <p> Etude du savoir faire professionel, théorique...</p>
                   </li>
@@ -121,13 +122,16 @@ const Home: NextPage = () => {
                     <p>Matériel et supports de cours fournits...</p>
                   </li>
                 </ul>
+                <div className="mx-auto w-1/2">
+                  <Button type="1" content="En Savoir Plus" />
+                </div>
               </FrameSection>
               <FrameSection
                 title="25 Formations Massage Pour Tous"
                 sub=""
                 hidden={true}
               >
-                <ul className="mt-20 list-decimal p-5 ">
+                <ul className="mt-12 list-decimal p-5 ">
                   <li>
                     <p>Devenez Masseuse (eur) Professionnel(le)</p>
                   </li>
@@ -144,6 +148,19 @@ const Home: NextPage = () => {
                     <p>Nous pouvons vous former en Anglais</p>
                   </li>
                 </ul>
+                <div className="mx-auto w-1/2">
+                  <Button type="1" content="En Savoir Plus" />
+                </div>
+              </FrameSection>
+            </div>
+          </div>
+          <div className="mx-auto">
+            <div>
+              <FrameSection
+                hidden={true}
+                title="Nos Formations Massage"
+              >
+                <FormationDropdown />
               </FrameSection>
             </div>
           </div>
