@@ -38,7 +38,7 @@
   position: absolute;
   right: 0;
   z-index: 10;
-  padding: 0.5em;
+  padding: 0.7em 1em;
   background: #dea984;
   box-shadow: -20px -20px 60px rgba(134, 172, 168, 0.12),
     10px 5px 20px rgba(151, 150, 150, 0.37);

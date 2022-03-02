@@ -8,8 +8,8 @@ const FrameSection = (props: any) => {
             <div className={style.frameTitle}>
               <h2 className="text-secondary">{props.title}</h2>
             </div>
-            <div className={style.frameSubtitle}>
-              <h4>{props.sub}</h4>
+            <div className={`${style.frameSubtitle} ${props.hidden ? "hidden":"visible"} `}>
+              <p className="text-sm">{props.sub}</p>
             </div>
           </div>
           <p>{props.children}</p>

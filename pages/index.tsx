@@ -5,6 +5,8 @@ import Button from '../components/Button'
 import FrameSection from '../components/FrameSection'
 import blur from '../img/blur1.png'
 import ava from '../img/Home/ava1.png'
+import Neuromorphism from '../components/Neuromorphism'
+import Formation from '../components/Formation'
 const Home: NextPage = () => {
   return (
     <div className="layout">
@@ -88,8 +90,61 @@ const Home: NextPage = () => {
               7j/7 12 Mois/12 Cours Individuels et 2 à 6 Personnes En école, à
               domicile, à distance
             </h3>
-            <div>
-              
+            <div className="flex flex-row justify-around py-10">
+              <div className="w-1/2">
+                <Formation status="2" />
+              </div>
+              <div className="w-1/2">
+                <Formation status="1" />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 justify-between gap-20 py-20">
+              <FrameSection
+                title="Des Formations Complétes"
+                sub=""
+                hidden={true}
+              >
+                <ul className="mt-20 list-decimal p-5">
+                  <li>
+                    <p> Etude du savoir faire professionel, théorique...</p>
+                  </li>
+                  <li>
+                    <p>S'installer, trouver ses clients...</p>
+                  </li>
+                  <li>
+                    <p>Suivi individuel permanent</p>
+                  </li>
+                  <li>
+                    <p> lors de la pratique</p>
+                  </li>
+                  <li>
+                    <p>Matériel et supports de cours fournits...</p>
+                  </li>
+                </ul>
+              </FrameSection>
+              <FrameSection
+                title="25 Formations Massage Pour Tous"
+                sub=""
+                hidden={true}
+              >
+                <ul className="mt-20 list-decimal p-5 ">
+                  <li>
+                    <p>Devenez Masseuse (eur) Professionnel(le)</p>
+                  </li>
+                  <li>
+                    <p>Complétez vos compétences</p>
+                  </li>
+                  <li>
+                    <p>
+                      Vous initiez pour apprendre les bons gestes du massage et
+                      le toucher juste
+                    </p>
+                  </li>
+                  <li>
+                    <p>Nous pouvons vous former en Anglais</p>
+                  </li>
+                </ul>
+              </FrameSection>
             </div>
           </div>
         </section>
