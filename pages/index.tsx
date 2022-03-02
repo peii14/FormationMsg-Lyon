@@ -100,66 +100,69 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 justify-between gap-20 py-20">
-              <FrameSection
-                title="Des Formations Complétes"
-                sub=""
-                hidden={true}
-              >
-                <ul className="mt-12 list-decimal p-5">
-                  <li>
-                    <p> Etude du savoir faire professionel, théorique...</p>
-                  </li>
-                  <li>
-                    <p>S'installer, trouver ses clients...</p>
-                  </li>
-                  <li>
-                    <p>Suivi individuel permanent</p>
-                  </li>
-                  <li>
-                    <p> lors de la pratique</p>
-                  </li>
-                  <li>
-                    <p>Matériel et supports de cours fournits...</p>
-                  </li>
-                </ul>
-                <div className="mx-auto w-1/2">
-                  <Button type="1" content="En Savoir Plus" />
-                </div>
-              </FrameSection>
-              <FrameSection
-                title="25 Formations Massage Pour Tous"
-                sub=""
-                hidden={true}
-              >
-                <ul className="mt-12 list-decimal p-5 ">
-                  <li>
-                    <p>Devenez Masseuse (eur) Professionnel(le)</p>
-                  </li>
-                  <li>
-                    <p>Complétez vos compétences</p>
-                  </li>
-                  <li>
-                    <p>
-                      Vous initiez pour apprendre les bons gestes du massage et
-                      le toucher juste
-                    </p>
-                  </li>
-                  <li>
-                    <p>Nous pouvons vous former en Anglais</p>
-                  </li>
-                </ul>
-                <div className="mx-auto w-1/2">
-                  <Button type="1" content="En Savoir Plus" />
-                </div>
-              </FrameSection>
+              <div className="grow-0">
+                <FrameSection
+                  title="Des Formations Complétes"
+                  sub=""
+                  isSmaller={true}
+                  hidden={true}
+                >
+                  <ul className="mt-5 list-decimal p-5">
+                    <li>
+                      <p> Etude du savoir faire professionel, théorique...</p>
+                    </li>
+                    <li>
+                      <p>S'installer, trouver ses clients...</p>
+                    </li>
+                    <li>
+                      <p>Suivi individuel permanent</p>
+                    </li>
+                    <li>
+                      <p> lors de la pratique</p>
+                    </li>
+                    <li>
+                      <p>Matériel et supports de cours fournits...</p>
+                    </li>
+                  </ul>
+                  <div className="mx-auto w-1/2">
+                    <Button type="1" content="En Savoir Plus" />
+                  </div>
+                </FrameSection>
+              </div>
+              <div className="grow-0">
+                <FrameSection
+                  title="25 Formations Massage Pour Tous"
+                  sub=""
+                  isSmaller={true}
+                  hidden={true}
+                >
+                  <ul className="mt-5 list-decimal p-5 ">
+                    <li>
+                      <p>Devenez Masseuse (eur) Professionnel(le)</p>
+                    </li>
+                    <li>
+                      <p>Complétez vos compétences</p>
+                    </li>
+                    <li>
+                      <p>
+                        Vous initiez pour apprendre les bons gestes du massage
+                        et le toucher juste
+                      </p>
+                    </li>
+                    <li>
+                      <p>Nous pouvons vous former en Anglais</p>
+                    </li>
+                  </ul>
+                  <div className="mx-auto w-1/2">
+                    <Button type="1" content="En Savoir Plus" />
+                  </div>
+                </FrameSection>
+              </div>
             </div>
           </div>
           <div className="mx-auto">
             <div>
-              <FrameSection
-                hidden={true}
-                title="Nos Formations Massage"
-              >
+              <FrameSection hidden={true} title="Nos Formations Massage">
                 <FormationDropdown />
               </FrameSection>
             </div>

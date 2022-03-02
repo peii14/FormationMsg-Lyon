@@ -28,7 +28,7 @@ const Dropdown = (props: any) => {
                 leaveFrom="transform scale-500 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-4 pb-2">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 ">
                 {props.children}
                 </Disclosure.Panel>
               </Transition>

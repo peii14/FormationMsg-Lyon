@@ -6,7 +6,7 @@ const FrameSection = (props: any) => {
         <div className={style.frameInner}>
           <div className={style.title}>
             <div className={style.frameTitle}>
-              <h2 className="text-secondary">{props.title}</h2>
+              <h2 className={`text-secondary ${props.isSmaller?"text-lg":""}`}>{props.title}</h2>
             </div>
             <div className={`${style.frameSubtitle} ${props.hidden ? "hidden":"visible"} `}>
               <p className="text-sm">{props.sub}</p>
