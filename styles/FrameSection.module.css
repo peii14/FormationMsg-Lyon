@@ -1,8 +1,7 @@
 .frame {
-  border-color: #2d403e;
-  background: #2d403e;
-  box-shadow: -20px -20px 71px 2px rgba(153, 190, 190, 0.199),
-    20px 20px 60px rgba(45, 64, 62, 0.4);
+  border-color: #f0f0f0;
+  background: #f0f0f0;
+  box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4);
   border-radius: 48px 24px;
   padding: 1em;
 }
@@ -14,22 +13,25 @@
   border-radius: 38px 14px;
   position: relative;
 }
+
 .title {
   min-width: 51%;
   max-width: 60%;
   position: absolute;
+  
   top: -3em;
   left: 50%;
   transform: translate(-50%, 0);
   text-align: center;
 }
 .frameTitle {
+  background-color: #5e6600;
   padding: 1em;
-  background: #f0f0f0;
   box-shadow: -20px -20px 60px rgba(202, 241, 237, 0.4),
     20px 20px 60px 4px rgba(45, 64, 62, 0.5),
     inset 0px 2px 1px rgba(240, 240, 240, 0.5);
   border-radius: 24px 24px 1px 24px;
+  
 }
 .frameSubtitle {
   max-width: fit-content;

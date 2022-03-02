@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import Title from '../components/Title'
 import Image from 'next/image'
 import Button from '../components/Button'
 import FrameSection from '../components/FrameSection'
@@ -7,12 +7,7 @@ import blur from '../img/blur1.png'
 import ava from '../img/Home/ava1.png'
 const Home: NextPage = () => {
   return (
-    
     <div className="layout">
-      <Head>
-        <title>Lyon Formation Massage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main>
         <section className="flex h-screen flex-col justify-center gap-20">
           <div className="grid h-max grid-cols-2 items-center  ">
@@ -37,15 +32,15 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className="mx-auto max-w-3xl">
+        <section className="mx-auto max-w-3xl py-10">
           <FrameSection title="Un Savoir Faire Reconnu" sub="Since 2005">
-            <ul className="list-outside list-decimal mt-16">
+            <ul className="mt-16 list-outside list-decimal">
               <li>
                 <p>Formations Massage professionnelles certifiantes</p>
               </li>
               <li>
                 <p>Cours de 1 à 6 personnes pour un Suivi Personnalisé</p>
-                <ul className="ml-5 list-disc">
+                <ul className="ml-5 list-disc ">
                   <li>
                     <p>Des formations chaque semaine</p>
                   </li>
@@ -79,7 +74,24 @@ const Home: NextPage = () => {
                 <p>Membre de la Fédération WMF</p>
               </li>
             </ul>
+            <div className="mx-auto mt-5 w-1/4">
+              <Button type="1" content="En Savoir Plus" />
+            </div>
           </FrameSection>
+        </section>
+        <section className="py-10">
+          <div className="mx-auto w-1/4">
+            <Title title="Formations" />
+          </div>
+          <div className="py-10">
+            <h3 className="mx-auto max-w-3xl text-center font-bold">
+              7j/7 12 Mois/12 Cours Individuels et 2 à 6 Personnes En école, à
+              domicile, à distance
+            </h3>
+            <div>
+              
+            </div>
+          </div>
         </section>
       </main>
     </div>

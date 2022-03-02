@@ -12,7 +12,7 @@ const FrameSection = (props: any) => {
               <h4>{props.sub}</h4>
             </div>
           </div>
-          {props.children}
+          <p>{props.children}</p>
         </div>
       </div>
     </>

@@ -11,8 +11,8 @@ module.exports = {
         secondary: '#DEA984',      
       },
       textColor: {
-        primary: "#ffffff",
-        secondary: "#282828",
+        secondary: "#f0f0f0",
+        primary: "#282828",
       },
       dropShadow: {
         '3xl': '0 45px 45px rgba(0, 0, 0, 0.55)',
