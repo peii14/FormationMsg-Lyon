@@ -7,10 +7,9 @@ const Neuromorphism = (props: any): JSX.Element => {
   } else {
     return (
       <div className="cursor-pointer">
-        <div className={n.Neuro}>{props.children}</div>
+        <div className={n.Neuro}>{props.childre }</div>
       </div>
     )
   }
 }
-
 export default Neuromorphism

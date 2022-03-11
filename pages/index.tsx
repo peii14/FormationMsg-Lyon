@@ -24,6 +24,7 @@ const Home: NextPage = () => {
             </div>
             <div className=" ml-auto w-2/3">
               <Image src={ava} />
+              
             </div>
           </div>
           <div className="flex max-w-sm flex-row justify-between ">
@@ -169,7 +170,7 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className="p-20">{/* ntar masukin yang video */}</section>
-        <section>
+        <section className='py-20'>
           <FrameSection hidden={true} title="offre de guidage">
             <h2>Comment Devenir Masseur(se) Professionnel(le)</h2>
             <h4 className="mt-5">saisissez votre adresse email:</h4>
