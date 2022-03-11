@@ -6,7 +6,7 @@ const FormationDropdown = () => {
   return (
     <div className="mt-5">
       <Dropdown topic="Les Massages aux Huiles du Corps">
-        <div className="grid grid-cols-5 gap-10 text-center items-center ">
+        <div className="grid grid-cols-5 items-center gap-10 text-center ">
           <div className="grow-0">
             <Modal title="Initiation" />
           </div>
@@ -37,7 +37,7 @@ const FormationDropdown = () => {
           <div className="grow-0">
             <Modal title="Lomi Lomi" />
           </div>
-          <div className="grow-0 col-start-2">
+          <div className="col-start-2 grow-0">
             <Modal title="Drainage Lymphatique" />
           </div>
           <div className="grow-0">
@@ -51,8 +51,71 @@ const FormationDropdown = () => {
       <Dropdown
         topic="Les Massages Habillés
 sans huiles"
-      ></Dropdown>
-      <Dropdown topic="Massages &#38; Réflexologie"></Dropdown>
+      >
+        <div className="grid grid-cols-5 items-center gap-10 text-center ">
+          <div className="grow-0">
+            <Modal title="Assis “Amma”" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Do In" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Shiatsu" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Femme Enceinte" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Thaïlandais" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Post Grossesse" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Bébé Shantala" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Massage de l’Enfant" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Animation Atelier Enfant" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Bébé &#38; Animation d'Atelier" />
+          </div>
+          <div className="col-start-3 grow-0">
+            <Modal title="Assis “Amma” A distance" />
+          </div>
+        </div>
+      </Dropdown>
+      <Dropdown topic="Massages &#38; Réflexologie">
+        <div className='grid grid-cols-5 items-center gap-10 text-center'>
+          <div className="grow-0">
+            <Modal title="Massage Etoile" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Ventre Chi Nei Tsang" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Visage Indien Marmas" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Kobido" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Tête Mains Pieds" />
+          </div>
+          <div className="grow-0 col-start-2">
+            <Modal title="Réflexologie Plantaire" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Réflexologie Palmaire" />
+          </div>
+          <div className="grow-0">
+            <Modal title="Dien Chan" />
+          </div>
+        </div>
+      </Dropdown>
     </div>
   )
 }

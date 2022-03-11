@@ -168,6 +168,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+        {/* ntar masukin yang video */}
+        <section>
+
+        </section>
       </main>
     </div>
   )

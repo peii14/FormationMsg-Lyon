@@ -1,6 +1,6 @@
 const Footer = () =>{
     return(
-        <footer>
+        <footer className="bg-primary flex flex-row">
             
         </footer>
     )
