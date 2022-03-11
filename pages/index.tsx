@@ -168,9 +168,32 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        {/* ntar masukin yang video */}
+        <section className="p-20">{/* ntar masukin yang video */}</section>
         <section>
-
+          <FrameSection hidden={true} title="offre de guidage">
+            <h2>Comment Devenir Masseur(se) Professionnel(le)</h2>
+            <h4 className="mt-5">saisissez votre adresse email:</h4>
+            <form className="mx-auto mt-10  max-w-lg">
+              <div className="flex flex-row gap-10">
+                <label
+                  className="m-auto mb-2 block text-sm font-bold text-gray-700"
+                  // for="username"
+                >
+                  E-mail:
+                </label>
+                <input
+                  className="focus:shadow-outline w-full appearance-none rounded-2xl border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+                  id="E-mail"
+                  type="email"
+                  placeholder="E-mail"
+                  pattern=".+@globex\.com"
+                ></input>
+              </div>
+              <div className="ml-auto mt-5 w-1/2">
+                <Button type="1" content="je reçois mon guide offert" />
+              </div>
+            </form>
+          </FrameSection>
         </section>
       </main>
     </div>
