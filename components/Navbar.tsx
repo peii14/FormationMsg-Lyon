@@ -8,17 +8,17 @@ const Navbar = () => {
             <a className="cursor-pointer">Formations</a>
           </li>
         </Link>
-        <Link href="/">
+        <Link href="/Reservez">
           <li>
             <a className="cursor-pointer">Date &#38; Réservez</a>
           </li>
         </Link>{' '}
-        <Link href="/">
+        <Link href="/Tarifs">
           <li>
             <a className="cursor-pointer">Tarifs</a>
           </li>
         </Link>
-        <Link href="/">
+        <Link href="/FAQ">
           <li>
             <a className="cursor-pointer">FAQ</a>
           </li>
