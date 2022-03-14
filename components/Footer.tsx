@@ -12,13 +12,13 @@ import {
 const Footer = () => {
   return (
     <footer className=" bg-primary p-20 ">
-      <div className="mx-auto flex max-w-4xl flex-row justify-around">
-        <div className="mx-auto mt-5 ">
+      <div className="flex flex-row justify-between max-w-4xl mx-auto">
+        <div className="mt-5 ">
           <Image src={logo} width={120} height={120} />
         </div>
-        <div className="flex flex-col gap-3 text-secondary">
+        <div className="flex flex-col w-1/3 gap-3 text-secondary">
           <h3 className="tracking-widest text-secondary">Contactez Nous</h3>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3  ">
             <Link href="https://www.linkedin.com/company/ppi-lyon/">
               <a target={'_blank'}>
                 <div className="flex flex-row gap-3">
