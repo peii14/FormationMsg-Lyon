@@ -13,10 +13,12 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@headlessui/react": "^1.5.0",
     "headless": "^1.2.0",
+    "mongoose": "^6.2.9",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lottie": "^1.2.3",
+    "react-player": "^2.10.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

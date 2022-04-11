@@ -3,12 +3,32 @@ import Title from '../components/Title'
 import Image from 'next/image'
 import Button from '../components/Button'
 import FrameSection from '../components/FrameSection'
-import blur from '../img/blur1.png'
+import arch from '../img/elp.png'
 import ava from '../img/Home/ava1.png'
-import Neuromorphism from '../components/Neuromorphism'
 import Formation from '../components/Formation'
 import FormationDropdown from '../components/FormationDropdown'
+import MailOffer from '../components/MailOffer'
 const Home: NextPage = () => {
+  const registerEmail = async (event: {
+    preventDefault: () => void
+    target: { email: { value: any } }
+  }) => {
+    event.preventDefault()
+
+    const res = await fetch('/api/Guide', {
+      body: JSON.stringify({
+        name: event.target.email.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    })
+
+    const result = await res.json()
+    // result.user => 'Ada Lovelace'
+  }
+
   return (
     <div className="layout">
       <main>
@@ -22,9 +42,13 @@ const Home: NextPage = () => {
                 S/Saône{' '}
               </h4>
             </div>
-            <div className=" ml-auto w-2/3">
-              <Image src={ava} />
-              
+            <div className=" ml-auto w-2/3 relative -top-1/2">
+              <div className='z-10 absolute'>
+                <Image src={ava} />
+              </div>
+              <div className='absolute z-0'>
+                <Image src={arch} />
+              </div>
             </div>
           </div>
           <div className="flex max-w-sm flex-row justify-between ">
@@ -169,32 +193,11 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className="p-20">{/* ntar masukin yang video */}</section>
-        <section className='py-20'>
-          <FrameSection hidden={true} title="offre de guidage">
-            <h2>Comment Devenir Masseur(se) Professionnel(le)</h2>
-            <h4 className="mt-5">saisissez votre adresse email:</h4>
-            <form className="mx-auto mt-10  max-w-lg">
-              <div className="flex flex-row gap-10">
-                <label
-                  className="m-auto mb-2 block text-sm font-bold text-gray-700"
-                  // for="username"
-                >
-                  E-mail:
-                </label>
-                <input
-                  className="focus:shadow-outline w-full appearance-none rounded-2xl border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
-                  id="E-mail"
-                  type="email"
-                  placeholder="E-mail"
-                  pattern=".+@globex\.com"
-                ></input>
-              </div>
-              <div className="ml-auto mt-5 w-1/2">
-                <Button type="1" content="je reçois mon guide offert" />
-              </div>
-            </form>
-          </FrameSection>
+        {/* <section className="p-20">
+        Video player
+        </section> */}
+        <section className="py-20">
+          <MailOffer />
         </section>
       </main>
     </div>
