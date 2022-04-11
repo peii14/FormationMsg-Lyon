@@ -4,10 +4,12 @@ const Neuromorphism = (props: any): JSX.Element => {
     return <div className={n.NeuroMember}>{props.children}</div>
   } else if (props.isMember == 3) {
     return <div className={n.NeuroDisc}>{props.children}</div>
+  } else if (props.isMember == 4) {
+    return <div className={`${n.neuro2}`}>{props.children}</div>
   } else {
     return (
       <div className="cursor-pointer">
-        <div className={n.Neuro}>{props.childre }</div>
+        <div className={n.Neuro}>{props.children}</div>
       </div>
     )
   }

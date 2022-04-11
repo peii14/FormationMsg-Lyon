@@ -10,8 +10,13 @@ const Dropdown = (props: any) => {
         <Disclosure>
           {({ open }) => (
             <>
-              <Neuromorphism isMember="3">
-                <Disclosure.Button className="flex w-full transform justify-between rounded-lg px-4 py-2 text-left text-sm font-medium text-primary  duration-200">
+              <Neuromorphism isMember={props.isDark ? '4' : '3'}>
+                <Disclosure.Button
+                  className={`flex w-full transform justify-between rounded-lg px-4 py-2 text-left text-sm font-medium 
+                  ${
+                    props.isDark ? 'text-secondary' : 'text-primary'
+                  }  duration-200`}
+                >
                   <span className="text-base">{props.topic}</span>
                   <FontAwesomeIcon
                     size="2x"
@@ -30,7 +35,11 @@ const Dropdown = (props: any) => {
                   leaveFrom="transform scale-500 opacity-100"
                   leaveTo="transform scale-95 opacity-0"
                 >
-                  <Disclosure.Panel className="px-4 pt-4 pb-2 ">
+                  <Disclosure.Panel
+                    className={`px-4 pt-4 pb-2 ${
+                      props.isDark ? 'text-secondary' : 'text-primary'
+                    }`}
+                  >
                     {props.children}
                   </Disclosure.Panel>
                 </Transition>
@@ -46,7 +55,7 @@ const Dropdown = (props: any) => {
             <>
               <Frame>
                 <Disclosure.Button className="flex w-full transform justify-between rounded-lg px-4 py-2 text-left text-sm font-medium text-primary  duration-200">
-                  <h4 className="font-semibold text-xl">{props.topic}</h4>
+                  <h4 className="text-xl font-semibold">{props.topic}</h4>
                   <FontAwesomeIcon
                     size="2x"
                     className={`duration-500 ${
