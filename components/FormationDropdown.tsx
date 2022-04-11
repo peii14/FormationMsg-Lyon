@@ -5,49 +5,51 @@ import Neuromorphism from './Neuromorphism'
 const FormationDropdown = () => {
   return (
     <div className="mt-5">
-      <Dropdown topic="Les Massages aux Huiles du Corps">
-        <div className="grid grid-cols-5 items-center gap-10 text-center ">
-          <div className="grow-0">
-            <Modal title="Initiation" />
+      <div className="rounded-xl border-2 border-primary drop-shadow-2xl">
+        <Dropdown topic="Les Massages aux Huiles du Corps">
+          <div className="grid grid-cols-5 items-center gap-10 text-center ">
+            <div className="grow-0">
+              <Modal title="Initiation" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Amincissant" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Tuina 1 &#38; 2n" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Femme Enceinte" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Personnes Agées" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Ayurvédique" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Californien" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Pierres Chaudes" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Balinaiss" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Lomi Lomi" />
+            </div>
+            <div className="col-start-2 grow-0">
+              <Modal title="Drainage Lymphatique" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Sportif &#38; Suédois" />
+            </div>
+            <div className="grow-0">
+              <Modal title="Ventre Chi Nei Tsang" />
+            </div>
           </div>
-          <div className="grow-0">
-            <Modal title="Amincissant" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Tuina 1 &#38; 2n" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Femme Enceinte" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Personnes Agées" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Ayurvédique" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Californien" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Pierres Chaudes" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Balinaiss" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Lomi Lomi" />
-          </div>
-          <div className="col-start-2 grow-0">
-            <Modal title="Drainage Lymphatique" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Sportif &#38; Suédois" />
-          </div>
-          <div className="grow-0">
-            <Modal title="Ventre Chi Nei Tsang" />
-          </div>
-        </div>
-      </Dropdown>
+        </Dropdown>
+      </div>
       <Dropdown
         topic="Les Massages Habillés
 sans huiles"
@@ -89,7 +91,7 @@ sans huiles"
         </div>
       </Dropdown>
       <Dropdown topic="Massages &#38; Réflexologie">
-        <div className='grid grid-cols-5 items-center gap-10 text-center'>
+        <div className="grid grid-cols-5 items-center gap-10">
           <div className="grow-0">
             <Modal title="Massage Etoile" />
           </div>
@@ -105,7 +107,7 @@ sans huiles"
           <div className="grow-0">
             <Modal title="Tête Mains Pieds" />
           </div>
-          <div className="grow-0 col-start-2">
+          <div className="col-start-2 grow-0">
             <Modal title="Réflexologie Plantaire" />
           </div>
           <div className="grow-0">
