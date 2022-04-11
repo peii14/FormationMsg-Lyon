@@ -3,7 +3,9 @@ const Reservez = () => {
     <div className="layout">
       <main>
         <section className="pt-24">
-          <h2 className="text-center">Dates Formations Massage</h2>
+          <h2 className="text-center text-5xl font-semibold">
+            Dates Formations Massage
+          </h2>
           <div></div>
         </section>
       </main>
