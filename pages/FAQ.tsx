@@ -9,7 +9,7 @@ const FAQ = () => {
           <h2 className="text-center text-5xl font-semibold">
             Questions Fréquentes
           </h2>
-          <div className="my-10 flex flex-col gap-10 rounded-2xl bg-primary p-10 ">
+          <div className="my-10 flex flex-col gap-10 rounded-2xl bg-primary p-10">
             {Records &&
               Records.map((record) => {
                 return (

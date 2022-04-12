@@ -14,7 +14,7 @@
     "@headlessui/react": "^1.5.0",
     "headless": "^1.2.0",
     "mongoose": "^6.2.9",
-    "next": "latest",
+    "next": "^12.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lottie": "^1.2.3",
