@@ -24,7 +24,7 @@ export default async (
         res.status(400).json({ success: false })
       }
       break
-    case 'POST':  
+    case 'POST':
       try {
         const offerGuide = await Guide.create(req.body)
         res.status(201).json({ success: true, data: offerGuide })

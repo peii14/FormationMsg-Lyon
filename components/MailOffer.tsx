@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 
 const MailOffer = () => {
   const [form, setForm] = useState({ email: '' })
+  const [alert, setAlert] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState({})
-  // const router = useRouter();
 
   useEffect(() => {
     if (isSubmitting) {
@@ -20,7 +20,7 @@ const MailOffer = () => {
 
   const addOffer = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/offerGuide', {
+      const res = await fetch('/api/offerGuide', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -28,32 +28,32 @@ const MailOffer = () => {
         },
         body: JSON.stringify(form),
       })
-      console.log('ATTEMP')
     } catch (error) {
       console.log(error)
     }
   }
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
-    // let errs = validate()
-    // setErrors(errs)
+    let errs = validate()
+    setErrors(errs)
     setIsSubmitting(true)
   }
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
+      email: e.target.value,
     })
   }
 
-//   const validate = () => {
-//     let err = {}
-//     if (!form.email) {
-//       err.email = 'Email is required'
-//     }
+  const validate = () => {
+    let err = {}
+    if (!form.email) {
+      err = 'Email is required'
+    }
 
-//     return err
-//   }
+    return err
+  }
+
   return (
     <FrameSection hidden={true} title="Offre de Guidage">
       <h2>Comment Devenir Masseur(se) Professionnel(le)</h2>

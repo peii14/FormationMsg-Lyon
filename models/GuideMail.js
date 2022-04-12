@@ -1,4 +1,5 @@
 
+const { timeStamp } = require('console')
 const mongoose = require('mongoose')
 const GuideSchema = new mongoose.Schema({
   email: {
@@ -7,7 +8,11 @@ const GuideSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
-})
 
+},
+{
+  timestamps: true
+},
+)
 module.exports =
   mongoose.models.Guide || mongoose.model('Guide', GuideSchema)
