@@ -8,5 +8,90 @@
     "id": 2,
     "question": "Quelle(s) formation(s) choisir pour débuter ?",
     "ans": "Notre équipe de formateurs professionnels est la pour vous conseiller par mail et téléphone ceci dans le but de vous aider à faire les bons choix alors n’hésitez pas à nous contacter\nPour débuter nous recommandons:\nMassage aux huiles : le Massage Californien.\nMassage Habillé :  Massage Assis\nMassage de Réflexologie : Tête Visage Epaule - Mains - Pieds"
+  },
+  {
+    "id": 3,
+    "question": "Comment se déroulent vos formations massage ?",
+    "ans": "Formations de 1 à 6 personnes permettant d’acquérir les techniques professionnelles, pour être sûr de vos gestes. Apprentissage théorique . A chaque étape vous êtes corrigé  après que votre formateur(ice) vous ai montré et expliqué.Vous pratiquez aussi sur votre formateur(rice) qui vous guide vers le toucher juste.L’évaluation pour la certification est réalisée sur votre formateur.Nous restons à votre écoute sans limite dans le temps.Supports de cours fournits. Cessions de révisions."
+  },
+  {
+    "id":4,
+    "question":"Vos formations aux massages, permettent-elles de travailler sont-elles reconnues professionnellement ? Un certificat  est-il délivré  ? ",
+    "ans": "Oui. Votre.certificat vous est délivré après une évaluation individuelle sur votre formateur (rice) qui évalue votre aptitude à réaliser des massages. Suite à votre formation pratiquez régulièrement pour développer votre technique et votre toucher. Nous vous conseillons le plus souvent de choisir le statut  d'indépendant (d’auto-entrepreneur ou de portage)"
+  },
+  {
+    "id":5,
+    "question":"La Prise en charge financière des formations massage est-elle possible ?",
+    "ans": "Oui, Quelque soit votre situation, Salarié, Indépendant, personne Inscrite à Pôle Emploi, en reconversion...Notre enregistrement en qualité d'organisme de formation professionnel vous permet de demander la prise en charge de vos formations. Egalement Organisme aux normes Datadock celle ci permet  la prise en charge de vos formations massage par plus d'organisme financeurs."
+  },
+  {
+    "id":6,
+    "question":"Pourquoi un nombre de participants  entre 1 et 6 seulement ?",
+    "ans": "Notre système pédagogique d’enseignement du massage est développé depuis 2005, apprentissage avec nombre de participants limité à 6 , permettant un suivi individuel et une correction permanente, les formateurs pratiquent sur chaque participant et vous pratiquez sur vos formateurs pour qu'ils vous conseillent sur le toucher, base essentielle du savoir masser."
+  },
+  {
+    "id":7,
+    "question":"Je veux être Masseuse (eur) indépendant, comment faire ?",
+    "ans": "Quelles techniques de massage choisir ? Comment se mettre a son compte? Comment trouver et fidéliser vos clients?.. .Ces éléments et bien d'autre sont abordés durant nos formations professionnelles, chaque projet étant spécifique, nous vous offrons la possibilité de nous contacter pour toute question mêmeune fois vos Formations finis."
+  },
+  {
+    "id":8,
+    "question":"Quels sont les Tarifs des formations ?",
+    "ans": "de 99€ la journée en groupe de 2 à 6 personnes à 110€.Consultez la liste des tarifs sur notre site .Pour toute demande de prise en charge dans le cadre de la formation professionnelle un devis sera établit."
+  },
+  {
+    "id":9,
+    "question":"Est-ce que je peux payer la formation en plusieurs fois ?",
+    "ans": "Oui. Vous régler tout d’abord un acompte représentant 1/3 du montant de la formation, il sert à finaliser votre inscription. Le solde est à régler en début de formation, pour toute demande autre de règlement en plusieurs fois veuillez nous contacter avant le début de la formation."
+  },
+  {
+    "id":10,
+    "question":"Comment s'inscrire à une formation massage ?",
+    "ans": "Choisissez vos dates et réserver vos places gratuitement directement sur notre site internet. Dans les 48h nous validons la réservation de vos places, pour valider votre réservation vous réglez alors 1/3 du montant de la formation les 2/3 restant lors de la formation."
+  },
+  {
+    "id":11,
+    "question":"Dois-je avoir des connaissances anatomiques  ?",
+    "ans": "Non. Toutes les connaissances techniques ou anatomiques nécessaires vous seront apportées durant la formation, ce sont d’ailleurs des techniques d’anatomie palpatoire ou l’avantage d’être en groupe de 2 à 6 personnes nous permet de vous montrer individuellement, vous laisser ressentir et vous corriger progressivement."
+  },
+  {
+    "id":12,
+    "question":"Il y a t’il une limite d'âge pour participer aux formations massage ?",
+    "ans": "Non. Il n’y a pas de limite d’âge, nous constatons de plus en plus de jeunes qui s'orientent très tôt vers le métier de masseur bien être (pour les personnes mineures nous demandons un accord parental écrit). A l'inverse de plus en plus de personne qui arrivent à l’âge de la retraite choisissent d’apprendre les métiers du massage à la fois pour leur plaisir mais également pour exercer dans un cadre associatif ou professionnel pour obtenir un revenu complémentaire."
+  },
+  {
+    "id":13,
+    "question":"Je suis un homme puis je réussir à gagner ma vie dans les métiers du massage ? Vos formations sont-elles mixtes ?",
+    "ans": "Il y a plus de  30% d'hommes pour 70% de femmes. Nos formations sont ouvertes à toutes personnes ayant le souhait découvrir l’art de donner du bien être par le toucher.  Norte équipe et mixte, nous pouvons même assurer certains de nos stages en Anglais. En cours individuel ou groupe, nous ferons le maximum pour vous permettre d'être formé"
+  },
+  {
+    "id":14,
+    "question":"Où se déroulent les Formations Massage dans Lyon ?",
+    "ans": "Le siége de notre école de formation en massage bien être se situe à Lyon, précisément nous sommes à 15 min à pied de la gare de Lyon Part Dieu au 77 rue Jean Claude Vivant 69100 Villeurbanne.Nous sommes également présents à sainte Eulalie en Ardèche, à Valence, Montpellier Chalon  S/Saône…Nos formateurs (trices) se déplacent également et interviennent à votre domicile ou dans votre entreprise."
+  },
+  {
+    "id":15,
+    "question":"Quelles sont les horaires des Formations Massage ?",
+    "ans": "Début des cours à 9h30, l'horaire de fin de chaque journée est adaptée à progression du groupe mais jamais plus de 18h, en effet nous nous adaptons à chaque personne il arrive que certaines personnes aient plus de facilité que d'autre à progresser, nos formations étant garantie quelques soit le nombre de participant, nous avançons plus ou moins vite si vous êtes 2 ou 6"
+  },
+  {
+    "id":16,
+    "question":"Où manger lors des formations à Lyon ?",
+    "ans": "Un ensemble de points de restauration se trouvent à quelques mètres du lieu de formation ; et un parc est à votre dispositions, la pause déjeuner se fait  de 12h30 à 14h."
+  },
+  {
+    "id":17,
+    "question":"Il y a t’il besoin d'un minimum de participants pour que le stage soit maintenu ? ",
+    "ans": "Attention pour vos réservations de transport logement à opter pour des solutions modifiables ou annulable au cas ou un cas de force majeur nous oblige à reporter votre cession de formation massage"
+  },
+  {
+    "id":18,
+    "question":" Est-ce possible de se loger à proximité de l’école ?",
+    "ans": "Il y a des hôtels mais nous vous recommandons d’utiliser les services de site de logement chez l'habitant tel que (Air Bnb) dont le rapport qualité prix est excellent à partir de 30€ la chambre et le choix est important proche de nos écoles de massages"
+  },
+  {
+    "id":19,
+    "question":"Quand et comment puis-je suivre vos formations? les Weekend , lors des vacances scolaires , en juillet août, en groupe, en cours individuels, à domicile, cours du soir ?",
+    "ans": "Notre Ecole est ouverte 7j/7 12 Mois /12.Vous pouvez suivre vos formations en semaine comme les Week Ends.Chaque technique de massage est proposée de 1x par mois à 1x tout les 2 ou 3 mois. Nos formations sont proposées de 1 à 6 personnes pour préserver la qualité de votre apprentissage. Organisation de formation sur mesure renseignez vous. A domicile, en individuel"
   }
 ]

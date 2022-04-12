@@ -17,7 +17,7 @@ const Dropdown = (props: any) => {
                     props.isDark ? 'text-secondary' : 'text-primary'
                   }  duration-200`}
                 >
-                  <span className="text-base">{props.topic}</span>
+                  <span className="text-lg font-bold">{props.topic}</span>
                   <FontAwesomeIcon
                     size="2x"
                     className={`duration-500 ${
