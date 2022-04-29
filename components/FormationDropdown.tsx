@@ -4,7 +4,8 @@ import Modal from './Modal'
 const FormationDropdown = () => {
   return (
     <div className="mt-5 flex flex-col gap-5">
-      <Dropdown topic="Les Massages aux Huiles du Corps" type = '1'>
+      
+      <Dropdown topic="Les Massages aux Huiles du Corps" type="1">
         <div className="grid grid-cols-5 items-center gap-10 text-center ">
           <div className="grow-0">
             <Modal title="Initiation" />
@@ -47,7 +48,7 @@ const FormationDropdown = () => {
           </div>
         </div>
       </Dropdown>
-      <Dropdown topic="Les Massages Habillés sans huiles" type = '1'>
+      <Dropdown topic="Les Massages Habillés sans huiles" type="1">
         <div className="grid grid-cols-5 items-center gap-10 text-center ">
           <div className="grow-0">
             <Modal title="Assis “Amma”" />
@@ -84,7 +85,7 @@ const FormationDropdown = () => {
           </div>
         </div>
       </Dropdown>
-      <Dropdown topic="Massages &#38; Réflexologie" type = '1'>
+      <Dropdown topic="Massages &#38; Réflexologie" type="1">
         <div className="grid grid-cols-5 items-center gap-10">
           <div className="grow-0">
             <Modal title="Massage Etoile" />
