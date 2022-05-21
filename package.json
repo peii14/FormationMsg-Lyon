@@ -12,9 +12,14 @@
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@headlessui/react": "^1.5.0",
+    "@next-auth/mongodb-adapter": "^1.0.3",
+    "axios": "^0.27.2",
+    "cookie": "^0.5.0",
     "headless": "^1.2.0",
+    "mongodb": "^4.6.0",
     "mongoose": "^6.2.9",
     "next": "^12.1.4",
+    "next-auth": "^4.3.4",
     "react": "^17.0.2",
     "react-animate-height": "^2.1.2",
     "react-dom": "^17.0.2",
@@ -23,6 +28,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/cookie": "^0.5.1",
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
     "@types/styled-components": "^5.1.24",

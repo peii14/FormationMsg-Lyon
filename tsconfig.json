@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/mongo.js", "models/GuideMail.js", "pages/api/offerGuide/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/mongo.js", "models/GuideMail.js", "pages/api/offerGuide/index.tsx", "pages/api/offerGuide/login.jsx", "pages/api/auth/[...nextauth].js", "pages/Admin/Login.tsx"],
   "exclude": ["node_modules"]
 }
