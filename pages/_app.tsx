@@ -8,13 +8,21 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import Head from 'next/head'
 import { SessionProvider } from 'next-auth/react'
 
+import Router from 'next/router'
+import NProgress from 'nprogress'
+
 cfg.autoAddCss = false
 const GlobalStyles = createGlobalStyle`
     ${dom.css()}
 `
+
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SessionProvider session={pageProps.session} refetchInterval={60}>
+    <div>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <title>Lyon Formation Massage</title>
@@ -23,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </SessionProvider>
+    </div>
   )
 }
 
