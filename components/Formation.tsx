@@ -16,13 +16,13 @@ const Formation = (props: any) => {
     content = 'Dans nos Ecoles'
   }
   useEffect(() => {
-    lottie.loadAnimation({
-      container: container.current,
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      animationData: animate[0],
-    })
+    // lottie.loadAnimation({
+    //   container: container.current,
+    //   renderer: 'svg',
+    //   loop: false,
+    //   autoplay: false,
+    //   animationData: animate[0],
+    // })
     return () => {
       lottie.destroy()
     }
