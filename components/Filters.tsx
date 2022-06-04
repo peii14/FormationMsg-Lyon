@@ -52,7 +52,7 @@ const Filter = (props: any) => {
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                    `relative z-50 cursor-default select-none py-2 pl-10 pr-4 ${
                       active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                     }`
                   }
