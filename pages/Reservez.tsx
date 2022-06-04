@@ -8,13 +8,14 @@ const Reservez = () => {
           <h2 className="text-center text-5xl font-semibold">
             Dates Formations Massage
           </h2>
-          <div className="flex flex-row justify-around py-10">
-            <div className="flex flex-row gap-10">
-              <Filters />
-              <Filters />
-              <Filters />
+          <div className="flex flex-col justify-around py-10">
+            <div className="mx-auto grid w-1/3 grid-cols-2">
+              <p className="my-auto text-center">Branch</p>
+              <Filters type='2' />
             </div>
-            <Button type={true} content="Search" />
+            <div className='w-max mx-auto py-10 '>
+              <Button type={true} content="Search" />
+            </div>
           </div>
         </section>
       </main>

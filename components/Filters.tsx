@@ -2,15 +2,30 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faSort } from '@fortawesome/free-solid-svg-icons'
-const Filter = () => {
-  const people = [
-    { id: 1, name: 'Durward Reynolds', unavailable: false },
-    { id: 2, name: 'Kenton Towne', unavailable: false },
-    { id: 3, name: 'Therese Wunsch', unavailable: false },
-    { id: 4, name: 'Benedict Kessler', unavailable: true },
-    { id: 5, name: 'Katelyn Rohan', unavailable: false },
+const Filter = (props: any) => {
+  let maps: any = []
+  const branch = [
+    { id: 1, name: 'Lyon', unavailable: false },
+    { id: 2, name: 'Thiers', unavailable: false },
+    { id: 3, name: 'Aix Les Bains', unavailable: false },
+    { id: 4, name: 'Peraugres', unavailable: true },
+    { id: 5, name: 'Chalon S/Saône', unavailable: false },
+    { id: 5, name: 'St Chamond', unavailable: false },
+    { id: 5, name: 'Pro A Disatance', unavailable: false },
   ]
-  const [selected, setSelected] = useState(people[0])
+  const msgType = [
+    { id: 1, name: 'Les Massages aux Huiles du Corps', unavailable: false },
+    { id: 2, name: 'Les Massages Habilléssans huiles', unavailable: false },
+    { id: 3, name: 'Massages & Réflexologie', unavailable: false },
+  ]
+  if (props.type == 1) {
+    maps = branch
+  } else if (props.type == 2) {
+    maps = msgType
+  } else {
+    maps = branch
+  }
+  const [selected, setSelected] = useState(maps[0])
 
   return (
     <div className="">
@@ -33,7 +48,7 @@ const Filter = () => {
             leaveTo="opacity-0"
           >
             <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {people.map((person, personIdx) => (
+              {maps.map((person: any, personIdx: any) => (
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
