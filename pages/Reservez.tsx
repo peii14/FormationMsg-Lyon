@@ -1,21 +1,23 @@
 import Button from '../components/Button'
-import Filters from '../components/Filters'
 import FrameSection from '../components/FrameSection'
-
+import axios from 'axios'
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faSort } from '@fortawesome/free-solid-svg-icons'
-
+import { createRouteLoader } from 'next/dist/client/route-loader'
+import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
+import { reset } from '../redux/cartSlice'
 const Reservez = () => {
   const branch = [
-    { id: 1, name: 'Lyon', unavailable: false },
-    { id: 2, name: 'Thiers', unavailable: false },
-    { id: 3, name: 'Aix Les Bains', unavailable: false },
-    { id: 4, name: 'Peraugres', unavailable: true },
-    { id: 5, name: 'Chalon S/Saône', unavailable: false },
-    { id: 5, name: 'St Chamond', unavailable: false },
-    { id: 5, name: 'Pro A Disatance', unavailable: false },
+    { id: 1, name: 'Lyon', price: 10 },
+    { id: 2, name: 'Thiers', price: 20 },
+    { id: 3, name: 'Aix Les Bains', price: 30 },
+    { id: 4, name: 'Peraugres', price: 40 },
+    { id: 5, name: 'Chalon S/Saône', price: 50 },
+    { id: 5, name: 'St Chamond', price: 60 },
+    { id: 5, name: 'Pro A Disatance', price: 70 },
   ]
   const msgType = [
     { id: 1, name: 'Les Massages aux Huiles du Corps', unavailable: false },
@@ -23,19 +25,19 @@ const Reservez = () => {
     { id: 3, name: 'Massages & Réflexologie', unavailable: false },
   ]
   const formation1 = [
-    { id: 1, name: 'Initiation', unavailable: false },
-    { id: 2, name: 'Californien', unavailable: false },
-    { id: 3, name: 'Lomi Lomi', unavailable: false },
+    { id: 1, name: 'Initiation', price: 50 },
+    { id: 2, name: 'Californien', price: 25 },
+    { id: 3, name: 'Lomi Lomi', price: 21 },
   ]
   const formation2 = [
-    { id: 1, name: 'Assis “Amma”', unavailable: false },
-    { id: 2, name: 'Do In', unavailable: false },
-    { id: 3, name: 'Shiatsu', unavailable: false },
+    { id: 1, name: 'Assis “Amma”', price: 35 },
+    { id: 2, name: 'Do In', price: 32 },
+    { id: 3, name: 'Shiatsu', price: 10 },
   ]
   const formation3 = [
-    { id: 1, name: 'Massage Etoile', unavailable: false },
-    { id: 2, name: 'Kobido', unavailable: false },
-    { id: 3, name: 'Réflexologie Palmaire', unavailable: false },
+    { id: 1, name: 'Massage Etoile', price: 28 },
+    { id: 2, name: 'Kobido', price: 30 },
+    { id: 3, name: 'Réflexologie Palmaire', price: 20 },
   ]
   let formation = []
   const [branchSelected, setBranchSelected] = useState(branch[0])
@@ -48,6 +50,65 @@ const Reservez = () => {
 
   const [formationSelected, setFormationSelected] = useState(formation[0])
 
+  const [name, setName] = useState('')
+  const [prenom, setPrenom] = useState('')
+  const [tel, setTel] = useState('')
+  const [email, setEmail] = useState('')
+  const [address, setAddress] = useState('')
+  const [dates, setDates] = useState('')
+  const [duration, setDuration] = useState('')
+  const dispatch = useDispatch()
+  const router = useRouter()
+
+  const createOrder = async (data: any) => {
+    try {
+      const res = await axios.post('http://localhost:3000/api/orders', data)
+      if (res.status === 201) {
+        // dispatch(reset())
+        // router.push(`/`)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  const [price, setPrice] = useState(0)
+  const [visible, setvisible] = useState(false)
+  const checkPrice = () => {
+    setvisible(true)
+    setPrice(branchSelected.price + formationSelected.price)
+  }
+  const handleBranchChange = (props: any) => {
+    setBranchSelected(props)
+    setvisible(false)
+  }
+  const handleTypeChange = (props: any) => {
+    setTypeSelected(props)
+    setvisible(false)
+  }
+  const handleFormationChange = (props: any) => {
+    setFormationSelected(props)
+    setvisible(false)
+  }
+
+  const handleCreateOrder = () => {
+    const branch = branchSelected.name
+    const type = typeSelected.name
+    const formation = formationSelected.name
+
+    createOrder({
+      name,
+      prenom,
+      tel,
+      email,
+      address,
+      dates,
+      duration,
+      branch,
+      type,
+      formation,
+    })
+  }
+
   return (
     <div className="layout">
       <main>
@@ -59,35 +120,64 @@ const Reservez = () => {
             <h3 className="text-center">Personal Information</h3>
             <div className="grid-flow- mx-auto grid w-8/12 grid-cols-4 gap-5 py-5">
               <p>Nom</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                placeholder="John Doe"
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              />
 
               <p>Prenom</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setPrenom(e.target.value)}
+              />
 
               <p>Tél</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setTel(e.target.value)}
+              />
 
               <p>Email</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
               <p>Adresse</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setAddress(e.target.value)}
+              />
 
               <p>Durée</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setDuration(e.target.value)}
+              />
 
               <p>Dates</p>
-              <input className=" rounded-md" type="text" />
+              <input
+                className=" rounded-md"
+                type="text"
+                onChange={(e) => setDates(e.target.value)}
+              />
             </div>
           </div>
 
           <h3 className="pt-10 text-center">Select Service</h3>
-          <div className="mb-56 flex flex-col justify-around ">
+          <div className="mb-16 flex flex-col justify-around ">
             <div className="mx-auto grid w-11/12 grid-cols-3 gap-3">
               <div>
                 <p className="my-3 text-left">Lieu</p>
                 <div className="">
-                  <Listbox value={branchSelected} onChange={setBranchSelected}>
+                  <Listbox value={branchSelected} onChange={handleBranchChange}>
                     <div className="relative mt-1">
                       <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                         <span className="block truncate">
@@ -107,7 +197,7 @@ const Reservez = () => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                       >
-                        <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                        <Listbox.Options className="absolute mt-1 max-h-40 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                           {branch.map((person: any, personIdx: any) => (
                             <Listbox.Option
                               key={personIdx}
@@ -151,7 +241,7 @@ const Reservez = () => {
               <div>
                 <p className="my-3 text-left">Massage Type</p>
                 <div className="">
-                  <Listbox value={typeSelected} onChange={setTypeSelected}>
+                  <Listbox value={typeSelected} onChange={handleTypeChange}>
                     <div className="relative mt-1">
                       <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                         <span className="block truncate">
@@ -217,7 +307,7 @@ const Reservez = () => {
                 <div className="">
                   <Listbox
                     value={formationSelected}
-                    onChange={setFormationSelected}
+                    onChange={handleFormationChange}
                   >
                     <div className="relative mt-1">
                       <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
@@ -280,8 +370,19 @@ const Reservez = () => {
                 </div>
               </div>
             </div>
+
             <div className="m-auto mt-10 h-full w-max">
-              <Button type={true} content="Search" />
+              <button onClick={checkPrice}>
+                <Button type={true} content="Check Price" />
+              </button>
+            </div>
+            <div
+              className={`mt-10 text-center ${visible ? 'block' : 'hidden'}`}
+            >
+              <h3 className={``}>
+                Tarifs pour {typeSelected.name}-{formationSelected.name}
+              </h3>
+              <h3>{price} €</h3>
             </div>
           </div>
           <div className="mx-auto w-8/12 py-20">
