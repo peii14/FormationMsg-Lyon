@@ -4,26 +4,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faSort } from '@fortawesome/free-solid-svg-icons'
 const Filter = (props: any) => {
   let maps: any = []
-  const branch = [
-    { id: 1, name: 'Lyon', unavailable: false },
-    { id: 2, name: 'Thiers', unavailable: false },
-    { id: 3, name: 'Aix Les Bains', unavailable: false },
-    { id: 4, name: 'Peraugres', unavailable: true },
-    { id: 5, name: 'Chalon S/Saône', unavailable: false },
-    { id: 5, name: 'St Chamond', unavailable: false },
-    { id: 5, name: 'Pro A Disatance', unavailable: false },
+
+
+  const formation1 = [
+    { id: 1, name: 'Initiation', unavailable: false },
+    { id: 2, name: 'Californien', unavailable: false },
+    { id: 3, name: 'Lomi Lomi', unavailable: false },
   ]
-  const msgType = [
-    { id: 1, name: 'Les Massages aux Huiles du Corps', unavailable: false },
-    { id: 2, name: 'Les Massages Habilléssans huiles', unavailable: false },
-    { id: 3, name: 'Massages & Réflexologie', unavailable: false },
+  const formation2 = [
+    { id: 1, name: 'Assis “Amma”', unavailable: false },
+    { id: 2, name: 'Do In', unavailable: false },
+    { id: 3, name: 'Shiatsu', unavailable: false },
+  ]
+  const formation3 = [
+    { id: 1, name: 'Massage Etoile', unavailable: false },
+    { id: 2, name: 'Kobido', unavailable: false },
+    { id: 3, name: 'Réflexologie Palmaire', unavailable: false },
   ]
   if (props.type == 1) {
     maps = branch
   } else if (props.type == 2) {
     maps = msgType
+  } else if (props.type == 3) {
+    maps = formation1
+  } else if (props.type == 4) {
+    maps = formation2
   } else {
-    maps = branch
+    maps = formation3
   }
   const [selected, setSelected] = useState(maps[0])
 
@@ -58,6 +65,7 @@ const Filter = (props: any) => {
                   }
                   value={person}
                 >
+                  
                   {({ selected }) => (
                     <>
                       <span
