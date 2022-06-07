@@ -10,9 +10,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { reset } from '../redux/cartSlice'
 import Danger from '../components/Danger'
+import Alert from '../components/Alert'
 
 const Reservez = () => {
-
   const branch = [
     { id: 1, name: 'Lyon', price: 10 },
     { id: 2, name: 'Thiers', price: 20 },
@@ -139,6 +139,13 @@ const Reservez = () => {
         }`}
       >
         <Danger />
+      </div>
+      <div
+        className={`fixed left-1/2 z-50 w-1/2 -translate-x-1/2 duration-500 ${
+          success ? 'top-5 translate-y-0  ' : 'top-0 -translate-y-full'
+        }`}
+      >
+        <Alert />
       </div>
       <main>
         <section className="pt-24">

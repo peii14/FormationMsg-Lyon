@@ -71,17 +71,39 @@ const Dashboard = ({ orders }: any) => {
                     <label className="sr-only">Nom</label>
                   </div>
                 </th>
-                <th className="p-4 text-left font-medium">Prenom</th>
-                <th className="p-4 text-left font-medium">Tel</th>
-                <th className="p-4 text-left font-medium">Email</th>
-                <th className="p-4 text-left font-medium">Address</th>
-                <th className="p-4 text-left font-medium">Dates</th>
-                <th className="p-4 text-left font-medium">Duration</th>
-                <th className="p-4 text-left font-medium">Branch</th>
-                <th className="p-4 text-left font-medium">Type</th>
-                <th className="p-4 text-left font-medium">Type</th>
-                <th className="p-4 text-left font-medium">Formation</th>
-                <th className="p-4 text-left font-medium">Total</th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Nom
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Prenom
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Tel
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Email
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Address
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Dates
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Duration
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Branch
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Type
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Formation
+                </th>
+                <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                  Total
+                </th>
               </tr>
             </thead>
             <tbody>
