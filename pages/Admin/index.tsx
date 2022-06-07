@@ -10,7 +10,6 @@ const Dashboard = ({ orders }: any) => {
   const [MasterChecked, setMasterChecked] = useState(false)
   const [selectedList, setSelectedList] = useState(false)
 
-  let SelectedList = null
   // Update List Item's state and Master Checkbox State
   function onItemCheck(e: any, item: any) {
     let tempList = orderList
@@ -92,7 +91,7 @@ const Dashboard = ({ orders }: any) => {
                     <div className="flex items-center">
                       <input
                         type="checkbox"
-                        checked={request.name}
+                        // checked={request.name}
                         id="rowcheck{request.key}"
                         onChange={(e) => onItemCheck(e, request)}
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
