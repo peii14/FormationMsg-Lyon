@@ -20,7 +20,7 @@ const Reservez = () => {
     { id: 4, name: 'Peraugres', price: 40 },
     { id: 5, name: 'Chalon S/Saône', price: 50 },
     { id: 5, name: 'St Chamond', price: 60 },
-    { id: 5, name: 'Pro A Disatance', price: 70 },
+    { id: 5, name: 'Pro A Distance', price: 70 },
   ]
   const msgType = [
     { id: 1, name: 'Les Massages aux Huiles du Corps', unavailable: false },
@@ -78,7 +78,6 @@ const Reservez = () => {
           }.bind(this),
           5000
         )
-        console.log('duradd sabi')
       }
     } catch (err) {
       setError(true)

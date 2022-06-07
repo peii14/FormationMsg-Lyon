@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import jsCookie from "js-cookie";
 import Router from "next/router";
 import nextCookies from "next-cookies";
-
+import axios from 'axios'
 export const login = ({ token }, remember) => {
   remember
     ? jsCookie.set("token", token, {
@@ -41,6 +41,7 @@ export const auth = ctx => {
   return token;
 };
 
+
 export const withAuthSync = WrappedComponent => {
   const Wrapper = props => {
     const syncLogout = event => {
@@ -59,17 +60,17 @@ export const withAuthSync = WrappedComponent => {
     }, []);
 
     return <WrappedComponent {...props} />;
-  };
+  };  
 
-  Wrapper.getInitialProps = async ctx => {
-    const token = auth(ctx);
+  // Wrapper.getInitialProps = async ctx => {
+  //   const token = auth(ctx);
 
-    const componentProps =
-      WrappedComponent.getInitialProps &&
-      (await WrappedComponent.getInitialProps(ctx));
+  //   const componentProps =
+  //     WrappedComponent.getInitialProps &&
+  //     (await WrappedComponent.getInitialProps(ctx));
 
-    return { ...componentProps, token };
-  };
+  //   return { ...componentProps, token };
+  // };
 
   return Wrapper;
 };
