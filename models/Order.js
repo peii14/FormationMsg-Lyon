@@ -2,15 +2,15 @@ import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema(
   {
-    customer: {
+    name: {
+      type: String,
+      maxlength: 60,
+      required: true ,
+    },
+    prenom: {
       type: String,
       required: true,
       maxlength: 60,
-    },
-    address: {
-      type: String,
-      required: true,
-      maxlength: 200,
     },
     Tel: {
       type: String,
@@ -22,12 +22,32 @@ const OrderSchema = new mongoose.Schema(
       required: true,
       maxlength: 200,
     },
+    Address: {
+      type: String,
+      required: true,
+      maxlength: 200,
+    },
+    Dates:{
+      type: String,
+      required: true,
+      maxlength: 200,
+    },
     Duration: {
       type: String,
       required: true,
       maxlength: 200,
     },
-    Package: {
+    Branch: {
+      type: String,
+      required: true,
+      maxlength: 200,
+    },
+    Type: {
+      type: String,
+      required: true,
+      maxlength: 200,
+    },
+    Formation: {
       type: String,
       required: true,
       maxlength: 200,
@@ -35,14 +55,6 @@ const OrderSchema = new mongoose.Schema(
     total: {
       type: Number,
       required: true,
-    },
-    status: {
-      type: Number,
-      default: 0,
-    },
-    method: {
-      type: Number,
-      required:true
     },
   },
   { timestamps: true }

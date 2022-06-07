@@ -9,7 +9,10 @@ import { createRouteLoader } from 'next/dist/client/route-loader'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { reset } from '../redux/cartSlice'
+import Danger from '../components/Danger'
+
 const Reservez = () => {
+
   const branch = [
     { id: 1, name: 'Lyon', price: 10 },
     { id: 2, name: 'Thiers', price: 20 },
@@ -39,9 +42,10 @@ const Reservez = () => {
     { id: 2, name: 'Kobido', price: 30 },
     { id: 3, name: 'Réflexologie Palmaire', price: 20 },
   ]
-  let formation = []
+  let formation: any = []
   const [branchSelected, setBranchSelected] = useState(branch[0])
   const [typeSelected, setTypeSelected] = useState(msgType[0])
+
   if (typeSelected.id == 1) {
     formation = formation1
   } else if (typeSelected.id == 2) {
@@ -58,16 +62,32 @@ const Reservez = () => {
   const [dates, setDates] = useState('')
   const [duration, setDuration] = useState('')
   const dispatch = useDispatch()
-  const router = useRouter()
 
+  const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
   const createOrder = async (data: any) => {
     try {
       const res = await axios.post('http://localhost:3000/api/orders', data)
       if (res.status === 201) {
-        // dispatch(reset())
+        dispatch(reset())
         // router.push(`/`)
+        setSuccess(true)
+        setTimeout(
+          function () {
+            setSuccess(false)
+          }.bind(this),
+          5000
+        )
+        console.log('duradd sabi')
       }
     } catch (err) {
+      setError(true)
+      setTimeout(
+        function () {
+          setError(false)
+        }.bind(this),
+        5000
+      )
       console.log(err)
     }
   }
@@ -83,6 +103,8 @@ const Reservez = () => {
   }
   const handleTypeChange = (props: any) => {
     setTypeSelected(props)
+    const dummy = [{ id: 1, name: 'Select Formation', price: 0 }]
+    setFormationSelected(dummy[0])
     setvisible(false)
   }
   const handleFormationChange = (props: any) => {
@@ -94,23 +116,31 @@ const Reservez = () => {
     const branch = branchSelected.name
     const type = typeSelected.name
     const formation = formationSelected.name
-
+    // let data = JSON.stringify({})
     createOrder({
-      name,
-      prenom,
-      tel,
-      email,
-      address,
-      dates,
-      duration,
-      branch,
-      type,
-      formation,
+      name: name,
+      prenom: prenom,
+      Tel: tel,
+      Email: email,
+      Address: address,
+      Dates: dates,
+      Duration: duration,
+      Branch: branch,
+      Type: type,
+      Formation: formation,
+      total: price,
     })
   }
 
   return (
     <div className="layout">
+      <div
+        className={`fixed left-1/2 z-50 w-1/2 -translate-x-1/2 duration-500 ${
+          error ? 'top-5 translate-y-0  ' : 'top-0 -translate-y-full'
+        }`}
+      >
+        <Danger />
+      </div>
       <main>
         <section className="pt-24">
           <h2 className="text-center text-5xl font-semibold">
@@ -121,57 +151,60 @@ const Reservez = () => {
             <div className="grid-flow- mx-auto grid w-8/12 grid-cols-4 gap-5 py-5">
               <p>Nom</p>
               <input
-                placeholder="John Doe"
-                className=" rounded-md"
+                placeholder="John"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setName(e.target.value)}
               />
 
               <p>Prenom</p>
               <input
-                className=" rounded-md"
+                placeholder="John"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setPrenom(e.target.value)}
               />
 
               <p>Tél</p>
               <input
-                className=" rounded-md"
+                placeholder="+33123456"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setTel(e.target.value)}
               />
 
               <p>Email</p>
               <input
-                className=" rounded-md"
+                placeholder="JohnDoe@gmail.com"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setEmail(e.target.value)}
               />
 
               <p>Adresse</p>
               <input
-                className=" rounded-md"
+                placeholder="Charpenes N-30"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setAddress(e.target.value)}
               />
-
               <p>Durée</p>
               <input
-                className=" rounded-md"
+                className=" rounded-md px-2 py-0.5"
                 type="text"
                 onChange={(e) => setDuration(e.target.value)}
               />
 
               <p>Dates</p>
               <input
-                className=" rounded-md"
-                type="text"
+                type="date"
+                className=" rounded-md px-2 py-0.5"
                 onChange={(e) => setDates(e.target.value)}
               />
             </div>
           </div>
 
-          <h3 className="pt-10 text-center">Select Service</h3>
+          <h3 className="pt-10 text-center">Sélection</h3>
           <div className="mb-16 flex flex-col justify-around ">
             <div className="mx-auto grid w-11/12 grid-cols-3 gap-3">
               <div>
@@ -383,6 +416,11 @@ const Reservez = () => {
                 Tarifs pour {typeSelected.name}-{formationSelected.name}
               </h3>
               <h3>{price} €</h3>
+            </div>
+            <div className="m-auto mt-10 h-full w-max">
+              <button onClick={handleCreateOrder}>
+                <Button type={true} content="Classe de demande" />
+              </button>
             </div>
           </div>
           <div className="mx-auto w-8/12 py-20">

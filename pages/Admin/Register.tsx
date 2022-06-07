@@ -46,7 +46,6 @@ export default function Register() {
                 setFieldError('username', 'That username is already taken.')
               } else {
                 console.log('Registration failed.')
-                // https://github.com/developit/unfetch#caveats
                 let error: any = new Error(response.statusText)
                 error.response = response
                 throw error

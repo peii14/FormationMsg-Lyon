@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const MailOffer = () => {
   const [form, setForm] = useState({ email: '' })
-  const [alert, setAlert] = useState(0)
+  const [alert, setAlert] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState({})
 
@@ -29,6 +29,8 @@ const MailOffer = () => {
         body: JSON.stringify(form),
       })
     } catch (error) {
+      setAlert(true)
+      
       console.log(error)
     }
   }
