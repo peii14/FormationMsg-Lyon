@@ -128,19 +128,25 @@ const FormationDropdown = () => {
             <Modal title="Visage Indien Marmas" content3 = "Marma signifie «caché » - «secret ». Les points Marmas sont des points du corps qui sont transmis en Inde de maitre à disciple. Ce sont des points de jonction entre les os, les muscles et les ligaments.  Ces points sont des points de santé qui lorsqu'ils sont stimulés ont la capacité de renforcer le système immunitaire, faciliter la circulation de l'énergie et ainsi éviter des maladies."/>
           </div>
           <div className="grow-0">
-            <Modal title="Kobido" />
+            <Modal title="Kobido" content = "Durée:  3 Jours  (1 à 6 personnes pour un apprentissage de qualité)."
+            content3 = "Le Massage Kobido est un massage énergétique du visage. En japonais, ko bi do (古美道) signifie « ancienne voie de beauté ». La technique alterne pressions, lissages, tapotements sur le visage, le cou et la nuque permettre d'obtenir un effet éclat et anti-âge. Il relâche, évacue les tensions organiques ou énergétiques. Il est reconnu pour son effet « lifting » naturel, éclaircicant le teint et préserve la jeunesse et l'élasticité du visage."/>
           </div>
           <div className="grow-0">
-            <Modal title="Tête Mains Pieds" />
+            <Modal title="Tête Mains Pieds" content = "Durée: 2 Jours (de 1 à 6 personnes)"
+            content2 = "Objectif: réaliser un massage d'au moins 40min"
+            content3 = "Cette technique de massage appelé aussi le massage Etoile vous permettra de découvrir les mécanismes de la réflexologie et de proposer des  massages de détente d'au moins 40 minutes en utilisant des techniques qui apportent une détente profonde Vous apprendrez également comment soulager les maux les plus courants."/>
           </div>
           <div className="col-start-2 grow-0">
-            <Modal title="Réflexologie Plantaire" />
+            <Modal title="Réflexologie Plantaire" content = "Durée:  3 Jours  (1 à 6 personnes)"
+            content2 = "Objectifs:  Apprentissage des techniques de réflexologie et détente du pied pour réaliser une séance de massage de 20 minutes à 1 heure permettant une auto régulation des zones du corps , apportant une relaxation profonde et soulageant les douleurs les plus courantes (mal de dos, maux de tête, maux de ventre...)."
+            content3 = "Massage offrant un bienfait à l'ensemble de l'organisme en agissant sur les multiples terminaisons nerveuses du pied, il ne nécessite pas de se dévêtir et peut se pratiquer très facilement en tout lieu sans matériel particulier."/>
           </div>
           <div className="grow-0">
             <Modal title="Réflexologie Palmaire" />
           </div>
           <div className="grow-0">
-            <Modal title="Dien Chan" />
+            <Modal title="Dien Chan" content = "Durée:  2 Jours  (1 à 6 personnes)"
+            content3 = "La Réflexologie de bien-être faciale intitulée 'Dien Chan', originaire du Viêtnam est une technique de relaxation associant détente et protocole de réflexologie de bien-être sur le visage le crâne et la nuque, les épaules. Partant du principe que le visage est la représentation miniaturisée du corps et grâce à la stimulation par pressions, lissages, étirements de ces zones  du corps spécifiques, uniquement par la pulpe des doigts, le bien-être ressenti sera global. Ce protocole de bien-être est très efficace et apportera une profonde détente du corps dans son ensemble."/>
           </div>
         </div>
       </Dropdown>
