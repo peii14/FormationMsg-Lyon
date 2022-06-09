@@ -66,19 +66,28 @@ const Reservez = () => {
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
   const createOrder = async (data: any) => {
+    let mail = {
+      to: email,
+      subject: 'Register',
+      message: 'You has been register',
+    }
     try {
       const res = await axios.post('http://localhost:3000/api/orders', data)
       if (res.status === 201) {
         dispatch(reset())
         // router.push(`/`)
-        setSuccess(true)
-        setTimeout(
-          function () {
-            setSuccess(false)
-          }.bind(this),
-          5000
-        )
       }
+      const res2 = await axios.post('http://localhost:3000/api/mail', mail)
+      if (res2.status === 201) {
+        dispatch(reset())
+      }
+      setSuccess(true)
+      setTimeout(
+        function () {
+          setSuccess(false)
+        }.bind(this),
+        5000
+      )
     } catch (err) {
       setError(true)
       setTimeout(

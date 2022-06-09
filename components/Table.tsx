@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 const Table = (props: any) => {
   const [tmpOrderList, setTmpOrderList] = useState([])
@@ -31,6 +32,9 @@ const Table = (props: any) => {
     for (let i = 0; i < selectedList.length; i++) {
       await props.handleStatus(selectedList[i]._id)
     }
+    const router = useRouter()
+
+    router.reload()
   }
   function onMasterCheck(e: any) {
     let tempList = props.orderList
@@ -49,7 +53,10 @@ const Table = (props: any) => {
         <table className="w-full table-auto">
           <thead className="border-b-4 border-secondary-HOVER ">
             <tr className="bg-secondary">
-              <th scope="col" className="p-4">
+              <th
+                scope="col"
+                className={`${props.type ? 'block p-4' : 'hidden'}`}
+              >
                 <div className="flex items-center ">
                   <input
                     checked={props.MasterChecked}
@@ -99,7 +106,7 @@ const Table = (props: any) => {
           <tbody>
             {props.orderList.map((request: any) => (
               <tr className="border-b hover:bg-gray-50" key={request.key}>
-                <td className="w-4 p-4">
+                <td className={`${props.type ? 'block w-4 p-4' : 'hidden'}`}>
                   <div className="flex items-center">
                     <input
                       type="checkbox"
@@ -127,7 +134,11 @@ const Table = (props: any) => {
           </tbody>
         </table>
       </div>
-      <div className="flex flex-row gap-5 py-10">
+      <div
+        className={`${
+          props.type ? 'block flex flex-row gap-5 py-10' : 'hidden'
+        }`}
+      >
         <button onClick={handleAccept}>
           <Button type={true} content="Accept" />
         </button>

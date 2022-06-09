@@ -64,12 +64,14 @@ export const withAuthSync = WrappedComponent => {
 
   // Wrapper.getInitialProps = async ctx => {
   //   const token = auth(ctx);
-
+  //   const orderRes = await axios.get('http://localhost:3000/api/orders')
   //   const componentProps =
   //     WrappedComponent.getInitialProps &&
   //     (await WrappedComponent.getInitialProps(ctx));
 
-  //   return { ...componentProps, token };
+  //   return { ...componentProps, token , props: {
+  //           orders: orderRes.data,
+  //         }, };
   // };
 
   return Wrapper;
