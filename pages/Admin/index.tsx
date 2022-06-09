@@ -21,10 +21,16 @@ const Dashboard = ({ orders, accepted, mail }: any) => {
   const handleStatus = async (id: any) => {
     const item = orderList.filter((order: any) => order._id === id)[0]
     const currentStatus = item.status
+    let mail = {
+      to: 'client@gmail.com',
+      subject: 'Accepted',
+      message: 'Class has been accepted',
+    }
     try {
       const res = await axios.put('http://localhost:3000/api/orders/' + id, {
         status: currentStatus + 1,
       })
+      const res2 = await axios.post('http://localhost:3000/api/mail', mail)
       setOrderList(orderList.filter((item: any) => item.value !== id))
     } catch (err) {
       console.log(err)
@@ -32,8 +38,15 @@ const Dashboard = ({ orders, accepted, mail }: any) => {
   }
   const handleDelete = async (id: any) => {
     console.log(id)
+    let mail = {
+      to: 'client@gmail.com',
+      subject: 'Rejected',
+      message: 'Class has been Rejected',
+    }
     try {
       const res = await axios.delete('http://localhost:3000/api/orders/' + id)
+      const res2 = await axios.post('http://localhost:3000/api/mail', mail)
+
       setOrderList(orderList.filter((order: any) => order._id !== id))
     } catch (err) {
       console.log(err)
