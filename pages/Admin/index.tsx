@@ -12,6 +12,11 @@ const Dashboard = ({ orders, accepted, mail }: any) => {
   const [orderList, setOrderList] = useState(orders)
   const [acc, setAccepted] = useState(accepted)
   const [emails, setEmail] = useState(mail)
+  const [offer, setOffer] = useState('')
+
+  const [tmpOrderList, setTmpOrderList] = useState([])
+  const [MasterChecked, setMasterChecked] = useState(false)
+  const [selectedList, setSelectedList]: any = useState([])
 
   const handleStatus = async (id: any) => {
     const item = orderList.filter((order: any) => order._id === id)[0]
@@ -33,6 +38,50 @@ const Dashboard = ({ orders, accepted, mail }: any) => {
     } catch (err) {
       console.log(err)
     }
+  }
+  const sendOffer = async (id: any) => {
+    for (let i = 0; i < selectedList.length; i++) {
+      let mail = {
+        to: selectedList[i].email,
+        subject: 'Offer',
+        message: offer,
+      }
+      try {
+        const res2 = await axios.post('http://localhost:3000/api/mail', mail)
+        if (res2.status === 201) {
+          console.log('success')
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+  function onMasterCheck(e: any) {
+    let tempList = emails
+    // Check/ UnCheck All Items
+    tempList.map((user: any) => (user.selected = e.target.checked))
+
+    //Update State
+    setMasterChecked(e.target.checked)
+    // setOrderList(tempList)
+    setSelectedList(emails.filter((e: any) => e.selected))
+  }
+  function onItemCheck(e: any, item: any) {
+    let tempList = emails
+    tempList.map((user: any) => {
+      if (user._id === item._id) {
+        user.selected = e.target.checked
+      }
+      return user
+    })
+    //To Control Master Checkbox State
+    const totalItems = emails.length
+    const totalCheckedItems = tempList.filter((e: any) => e.selected).length
+
+    // Update State
+    setMasterChecked(totalItems === totalCheckedItems)
+    setTmpOrderList(tempList)
+    setSelectedList(emails.filter((e: any) => e.selected))
   }
 
   return (
@@ -91,14 +140,71 @@ const Dashboard = ({ orders, accepted, mail }: any) => {
               </div>
             </Tab.Panel>
             <Tab.Panel>
-              <div className="w-screen">
-                <div className="mx-auto w-max">
-                  <Table
-                    handleDelete={handleDelete}
-                    type={false}
-                    orderList={mail}
-                    handleStatus={handleStatus}
-                  />
+              <div className="layout w-screen ">
+                <div className="mx-auto">
+                  <div className="">
+                    <p className="mb-10 text-center text-xl font-bold">
+                      Email Offer
+                    </p>
+                    <div className="mx-auto mb-5 flex w-max flex-col">
+                      <p className="mb-5 text-center">Offer Massage</p>
+                      <div>
+                        <input
+                          className=" w-max rounded-md px-2 py-0.5 "
+                          type="text"
+                          onChange={(e) => setOffer(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <table className="mx-auto w-max table-auto">
+                    <thead className="border-b-4 border-secondary-HOVER ">
+                      <tr className="bg-secondary">
+                        <th scope="col" className={`block  p-4`}>
+                          <div className="flex items-center ">
+                            <input
+                              checked={MasterChecked}
+                              onChange={(e: any) => onMasterCheck(e)}
+                              id="mastercheck"
+                              type="checkbox"
+                              className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                            />
+                            <label className="sr-only">Nom</label>
+                          </div>
+                        </th>
+                        <th className="max-w-20 overflow-scroll p-4 text-left font-medium">
+                          Email
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {emails.map((request: any) => (
+                        <tr
+                          className="border-b hover:bg-gray-50"
+                          key={request.key}
+                        >
+                          <td className={`block w-4 p-4`}>
+                            <div className="flex items-center">
+                              <input
+                                type="checkbox"
+                                // checked={request.name}
+                                id="rowcheck{request.key}"
+                                onChange={(e) => onItemCheck(e, request)}
+                                className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                              />
+                              <label className="sr-only">checkbox</label>
+                            </div>
+                          </td>
+                          <td className="p-4">{request.email}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mx-auto w-max ">
+                  <button className="py-5" onClick={sendOffer}>
+                    <Button type={true} content="Send Offer" />
+                  </button>
                 </div>
               </div>
             </Tab.Panel>

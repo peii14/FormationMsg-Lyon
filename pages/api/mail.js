@@ -17,7 +17,7 @@ export default function (req, res) {
         to: req.body.to,
         subject: `${req.body.subject}`,
         text: req.body.message + " | Sent from: " + req.body.to,
-        html: `<div>${req.body.message}</div><p>Sent from: ${req.body.to}</p>`
+        html: `<div>${req.body.message}</div><p>Sent To: ${req.body.to}</p>`
     }
   
     transporter.sendMail(mailData, function (err, info) {
