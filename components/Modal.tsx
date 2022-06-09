@@ -59,7 +59,9 @@ const Modal = (props: any) => {
                   {props.title}
                 </Dialog.Title>
                 <div className="mt-2">
-                  <p className="text-sm ">{props.content}</p>
+                  <p className="text-sm font-bold">{props.content}</p>
+                  <p className="text-sm mt-1 font-bold">{props.content2}</p>
+                  <p className="text-sm mt-3 ">{props.content3}</p>
                 </div>
 
                 <div className="mt-4">
