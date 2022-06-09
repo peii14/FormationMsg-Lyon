@@ -8,6 +8,7 @@ import ava from '../img/Home/ava1.png'
 import Formation from '../components/Formation'
 import FormationDropdown from '../components/FormationDropdown'
 import MailOffer from '../components/MailOffer'
+import Link from 'next/link'
 const Home: NextPage = () => {
   const registerEmail = async (event: {
     preventDefault: () => void
@@ -42,11 +43,11 @@ const Home: NextPage = () => {
                 S/Saône{' '}
               </h4>
             </div>
-            <div className=" ml-auto w-2/3 relative -top-1/2">
-              <div className='z-10 absolute'>
+            <div className=" relative -top-1/2 ml-auto w-2/3">
+              <div className="absolute z-10">
                 <Image src={ava} />
               </div>
-              <div className='absolute z-0'>
+              <div className="absolute z-0">
                 <Image src={arch} />
               </div>
             </div>

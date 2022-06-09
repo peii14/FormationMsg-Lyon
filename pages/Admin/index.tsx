@@ -42,9 +42,11 @@ const Dashboard = ({ orders, accepted }: any) => {
             <Tab as={Fragment}>
               {({ selected }) => (
                 <button
-                  className={
-                    selected ? 'bg-primary text-white' : 'bg-white text-black'
-                  }
+                  className={`
+                    ${
+                      selected ? 'bg-primary ' : 'bg-white text-black'
+                    } text-white p-5
+                    `}
                 >
                   Tab 1
                 </button>

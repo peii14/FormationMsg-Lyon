@@ -15,6 +15,7 @@
 }
 .frameInner2 {
   padding: 1em;
+  
   border-radius: 30px;
   box-shadow: inset -5px -5px 5px rgba(134, 172, 168, 0.12),
     inset 5px 3px 10px rgba(0, 0, 0, 0.452);

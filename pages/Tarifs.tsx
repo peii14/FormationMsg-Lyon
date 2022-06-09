@@ -11,22 +11,24 @@ const Tarifs = () => {
             {Records &&
               Records.map((record) => {
                 return (
-                  <Dropdown type="2" topic={record.topic} key={record.id}>
-                    <div className="px-5 py-2 text-left">
-                      {record.contents?.map((cont) => {
-                        return (
-                          <>
-                            <p className="font-semibold">{cont.list}</p>
-                            <p>{cont.content}</p>
-                          </>
-                        )
-                      })}
-                      <div className="mt-5">
-                        <p>{record.information}</p>
-                        <p>{record.date}</p>
+                  <div className="cursor-pointer">
+                    <Dropdown type="2" topic={record.topic} key={record.id}>
+                      <div className="px-5 py-2 text-left ">
+                        {record.contents?.map((cont) => {
+                          return (
+                            <>
+                              <p className="font-semibold">{cont.list}</p>
+                              <p>{cont.content}</p>
+                            </>
+                          )
+                        })}
+                        <div className="mt-5">
+                          <p>{record.information}</p>
+                          <p>{record.date}</p>
+                        </div>
                       </div>
-                    </div>
-                  </Dropdown>
+                    </Dropdown>
+                  </div>
                 )
               })}
           </div>
