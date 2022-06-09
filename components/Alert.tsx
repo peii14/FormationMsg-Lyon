@@ -1,7 +1,7 @@
 const Alert = () => {
   return (
     <div
-      className="relative w-full rounded border border-green-600 bg-green-100 px-4 py-3 text-white"
+      className="relative w-full rounded border border-green-600 bg-green-100 px-4 py-3 text-primary"
       role="alert"
     >
       <strong className="font-bold">félicitation!</strong>

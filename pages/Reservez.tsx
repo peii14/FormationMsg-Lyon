@@ -128,6 +128,7 @@ const Reservez = () => {
       Type: type,
       Formation: formation,
       total: price,
+      status: 0,
     })
   }
 
