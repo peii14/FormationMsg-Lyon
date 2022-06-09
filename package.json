@@ -27,7 +27,7 @@
     "js-cookie": "^3.0.1",
     "mongodb": "^4.6.0",
     "mongoose": "^6.2.9",
-    "next": "^12.1.4",
+    "next": "^12.1.6",
     "next-auth": "^4.3.4",
     "next-cookies": "^2.0.3",
     "nodemailer": "^6.7.5",
