@@ -32,9 +32,14 @@ const Table = (props: any) => {
     for (let i = 0; i < selectedList.length; i++) {
       await props.handleStatus(selectedList[i]._id)
     }
-    const router = useRouter()
+    // const router = useRouter()
 
-    router.reload()
+    // router.reload()
+  }
+  const handleDel = async () => {
+    for (let i = 0; i < selectedList.length; i++) {
+      await props.handleDelete(selectedList[i]._id)
+    }
   }
   function onMasterCheck(e: any) {
     let tempList = props.orderList
@@ -53,10 +58,7 @@ const Table = (props: any) => {
         <table className="w-full table-auto">
           <thead className="border-b-4 border-secondary-HOVER ">
             <tr className="bg-secondary">
-              <th
-                scope="col"
-                className={`${props.type ? 'block p-4' : 'hidden'}`}
-              >
+              <th scope="col" className={`block  p-4`}>
                 <div className="flex items-center ">
                   <input
                     checked={props.MasterChecked}
@@ -106,7 +108,7 @@ const Table = (props: any) => {
           <tbody>
             {props.orderList.map((request: any) => (
               <tr className="border-b hover:bg-gray-50" key={request.key}>
-                <td className={`${props.type ? 'block w-4 p-4' : 'hidden'}`}>
+                <td className={`block w-4 p-4`}>
                   <div className="flex items-center">
                     <input
                       type="checkbox"
@@ -135,14 +137,17 @@ const Table = (props: any) => {
         </table>
       </div>
       <div
-        className={`${
-          props.type ? 'block flex flex-row gap-5 py-10' : 'hidden'
-        }`}
+        className={`
+         flex flex-row gap-5 py-10
+        `}
       >
-        <button onClick={handleAccept}>
+        <button
+          className={`${props.type ? 'block' : 'hidden'}`}
+          onClick={handleAccept}
+        >
           <Button type={true} content="Accept" />
         </button>
-        <button>
+        <button onClick={handleDel}>
           <Button type={false} content="Decline" />
         </button>
       </div>
