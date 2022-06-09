@@ -13,7 +13,7 @@ const Modal = (props: any) => {
   return (
     <div>
       <button type="button" onClick={openModal} className="h-full w-full">
-        <Neuromorphism isMember='3'>
+        <Neuromorphism isMember="3">
           <p>{props.title}</p>
         </Neuromorphism>
       </button>

@@ -10,26 +10,6 @@ import FormationDropdown from '../components/FormationDropdown'
 import MailOffer from '../components/MailOffer'
 import Link from 'next/link'
 const Home: NextPage = () => {
-  const registerEmail = async (event: {
-    preventDefault: () => void
-    target: { email: { value: any } }
-  }) => {
-    event.preventDefault()
-
-    const res = await fetch('/api/Guide', {
-      body: JSON.stringify({
-        name: event.target.email.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
-
-    const result = await res.json()
-    // result.user => 'Ada Lovelace'
-  }
-
   return (
     <div className="layout">
       <main>

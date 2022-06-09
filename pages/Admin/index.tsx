@@ -8,9 +8,11 @@ import { Tab } from '@headlessui/react'
 import Table from '../../components/Table'
 import { Fragment } from 'react'
 
-const Dashboard = ({ orders, accepted }: any) => {
+const Dashboard = ({ orders, accepted, mail }: any) => {
   const [orderList, setOrderList] = useState(orders)
   const [acc, setAccepted] = useState(accepted)
+  const [emails, setEmail] = useState(mail)
+
   const handleStatus = async (id: any) => {
     const item = orderList.filter((order: any) => order._id === id)[0]
     const currentStatus = item.status
@@ -42,10 +44,12 @@ const Dashboard = ({ orders, accepted }: any) => {
             <Tab as={Fragment}>
               {({ selected }) => (
                 <button
-                  className={`
+                  className={`duration-200
                     ${
-                      selected ? 'bg-primary ' : 'bg-white text-black'
-                    } text-white p-5
+                      selected
+                        ? 'bg-primary text-white '
+                        : 'bg-white text-black'
+                    } mr-5 rounded-xl px-5 py-2 
                     `}
                 >
                   Tab 1
@@ -55,9 +59,12 @@ const Dashboard = ({ orders, accepted }: any) => {
             <Tab as={Fragment}>
               {({ selected }) => (
                 <button
-                  className={
-                    selected ? 'bg-primary text-white' : 'bg-white text-black'
-                  }
+                  className={`duration-200
+                    ${
+                      selected ? 'bg-primary text-white' : 'bg-white text-black'
+                    }
+                    rounded-xl px-5 py-2
+                  `}
                 >
                   Tab 2
                 </button>
@@ -66,20 +73,34 @@ const Dashboard = ({ orders, accepted }: any) => {
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel>
-              <h4 className="text-2xl">Customer Request</h4>
-              <Table
-                type={true}
-                orderList={orderList}
-                handleStatus={handleStatus}
-                handleDelete={handleDelete}
-              />
-              <h4 className="text-2xl">Accepted Customer</h4>
-              <Table
-                handleDelete={handleDelete}
-                type={false}
-                orderList={acc}
-                handleStatus={handleStatus}
-              />
+              <div className="py-5">
+                <h4 className="py-5 text-2xl">Customer Request</h4>
+                <Table
+                  type={true}
+                  orderList={orderList}
+                  handleStatus={handleStatus}
+                  handleDelete={handleDelete}
+                />
+                <h4 className="text-2xl">Accepted Customer</h4>
+                <Table
+                  handleDelete={handleDelete}
+                  type={false}
+                  orderList={acc}
+                  handleStatus={handleStatus}
+                />
+              </div>
+            </Tab.Panel>
+            <Tab.Panel>
+              <div className="w-screen">
+                <div className="mx-auto w-max">
+                  <Table
+                    handleDelete={handleDelete}
+                    type={false}
+                    orderList={mail}
+                    handleStatus={handleStatus}
+                  />
+                </div>
+              </div>
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
@@ -92,12 +113,15 @@ const Dashboard = ({ orders, accepted }: any) => {
 
 export const getServerSideProps = async (ctx: any) => {
   const orderRes = await axios.get('http://localhost:3000/api/orders')
+  const mailRes = await axios.get('http://localhost:3000/api/offerGuide')
   let request = orderRes.data.filter((item: any) => item.status === 0)
   let acc = orderRes.data.filter((item: any) => item.status !== 0)
+  let mails = mailRes.data
   return {
     props: {
       orders: request,
       accepted: acc,
+      mail: mails,
     },
   }
 }
